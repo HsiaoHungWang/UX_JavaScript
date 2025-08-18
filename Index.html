@@ -10,14 +10,19 @@
 </head>
 
 <body>
-    <div id="div1"></div>
+    <h2>H2</h2>
+    <div id="div1">
+    </div>
+
 
     <script>
         //先找到要控制的對象
         const myDiv = document.querySelector('#div1');
+        console.log(myDiv);
 
         //加入文字
-        myDiv.textContent = 'Hello JavaScript!!';
+        // myDiv.textContent = '<h2>Hello JavaScript!!</h2>';
+        myDiv.innerHTML = '<h2>Hello JavaScript!!</h2>';
 
         //  window.alert('Hello!!');
         // console.log('console');
