@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <style>
+        h2 {
+            color: blue;
+            background-color: lightblue;
+        }
+    </style>
 
 </head>
 
@@ -15,6 +21,7 @@
     </div>
 
     <input type="text" placeholder="請輸入姓名" value="guest" id="inputName" />
+    <input type="button" value="click" id="buttonClick" />
     <div id="div2"></div>
 
     <script>
@@ -36,14 +43,25 @@
         //step1 先找到要控制的對象
         const inpName = document.querySelector('#inputName');
         const myDiv2 = document.querySelector('#div2');
+        const btnClick = document.querySelector('#buttonClick');
 
 
         //focus/blur
         //使用者離開文字方塊的情況發生了 => 事件 blur
-        inpName.addEventListener('input', () => {
-            //事件發生才會執行這裡面的程式碼
-            //讀出文字方塊中的內容
+        // inpName.addEventListener('input', () => {
+        //     //事件發生才會執行這裡面的程式碼
+        //     //讀出文字方塊中的內容
+        //     myDiv2.textContent = inpName.value;
+        // })
+        //Tab
+        btnClick.addEventListener('click', () => {
             myDiv2.textContent = inpName.value;
+            inpName.style.backgroundColor = '';
+            inpName.value = '';
+        })
+
+        inpName.addEventListener('focus', () => {
+            inpName.style.backgroundColor = 'lightgreen';
         })
 
         //inpName.addEventListener('事件類型','事件發生要執行的程式')
