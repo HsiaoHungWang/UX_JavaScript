@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myH {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="myH">First JavaScript Demo</h1>
+
+    <script>
+        //step1 找到要控制的對象
+        const theH = document.querySelector('#myH');
+
+        //step2 在甚麼時候(甚麼情況發生的時侯 => 事件)
+        //滑鼠移上去 mouseover
+        theH.addEventListener('mouseover', () => {
+            //step3 做甚麼事 讓字的顏色改變
+            theH.style.color = 'red';
+        })
+        //滑鼠離開 mouseout
+        theH.addEventListener('mouseout', () => {
+            //step3 做甚麼事 讓字的顏色改變
+            theH.style.color = 'green';
+        })
+
+
+    </script>
+</body>
+
+</html>
