@@ -12,10 +12,13 @@
     <input type="number" placeholder="請輸入台幣" id="inputTwd" />
     <input type="button" value="計算" id="buttonChange" />
     <div id="divUsd">顯示美金?</div>
+    <label>美金</label>
+    <input type="number" placeholder="請輸入美金" id="inputUsd" />
 
     <script>
         //step1 找到要控制的對象  document.querySelector('#id')
         const inpTwd = document.querySelector('#inputTwd');
+        const inpUsd = document.querySelector('#inputUsd');
         const btnChange = document.querySelector('#buttonChange');
         const divUsd = document.querySelector('#divUsd');
         const exchangeRate = 30.07;  //1USD=30.07TWD
@@ -28,6 +31,17 @@
 
 
         })
+
+        inpTwd.addEventListener('input', () => {
+            const twd = inpTwd.value;
+            inpUsd.value = (twd / exchangeRate).toFixed(2);
+        })
+
+        inpUsd.addEventListener('input', () => {
+            const usd = inpUsd.value;
+            inpTwd.value = (usd * exchangeRate).toFixed(0);
+        })
+
 
 
 
