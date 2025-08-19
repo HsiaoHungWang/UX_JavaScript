@@ -37,10 +37,24 @@
         console.log(balls[2]); //valleyball
 
         //物件 {key:value, key:value}
-        const employee = { 'name': 'Eric', 'age': 30, 'email': 'eric@gmail.com' };
+        const employee = { 'userName': 'Eric', 'age': 30, 'mail': 'eric@gmail.com' };
         //讀取物件中的資料
-        console.log(employee.name); //Eric
+        console.log(employee.userName); //Eric
         console.log(employee["email"]); //eric@gamil.com
+
+
+        //解構賦值(Destructuring assignment)
+        //陣列解構會依照順序
+        const [b1, b2, b3] = balls;
+        console.log(b3); //valleyball
+
+        //物件解構會依照key名稱
+        const { userName, mail } = employee;
+        console.log(userName);
+        console.log(mail);
+
+
+
 
 
 
