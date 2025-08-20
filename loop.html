@@ -10,18 +10,45 @@
 <body>
 
     <script>
-        //for(初值 ; 條件式 ; 更新初值)
-        for (let i = 0; i < 100; i++) {
-            console.log('我愛JavaScript!!');
-        }
+        // //for(初值 ; 條件式 ; 更新初值)
+        // for (let i = 0; i < 100; i++) {
+        //     console.log('我愛JavaScript!!');
+        // }
 
+        // let total = 0;
+        // for (let i = 1; i <= 100; i++) {
+        //     total += i;  //total = total + i
+        // }
+        // console.log(`1+2+3...+99+100=${total}`);
+
+        // //列出1-1000中，不能被2整除也不能被3整除的數字
+        // for (let i = 1; i <= 1000; i++) {
+        //     if (i % 2 !== 0 && i % 3 !== 0) {
+        //         console.log(i);
+        //     }
+        // }
+
+        // console.log(4 % 2);
+        // console.log(9 % 3);
+
+        //while
+        let i = 1;
         let total = 0;
-        for (let i = 1; i <= 100; i++) {
-            total += i;  //total = total + i
+        while (i <= 100) {
+            total += i;
+            i++;
         }
         console.log(`1+2+3...+99+100=${total}`);
 
-        //列出1-1000中，不能被2整除也不能被3整除的數字
+        let x = 0;
+        while (x <= 10) {
+            x++;
+            if (x % 2 !== 0) {
+                continue;
+
+            }
+            console.log(x);
+        }
 
 
 
