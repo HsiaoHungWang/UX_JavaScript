@@ -61,12 +61,12 @@
         data = 'JavaScript';
         console.log(typeof data);
 
-        //使用者輸入兩個數字相加
-        const a = window.prompt('請輸入數字1', 0);
-        const b = window.prompt('請輸入數字2', 0);
-        // console.log(typeof Number(a));
-        // console.log(typeof b);
-        console.log(Number(a) + Number(b));
+        // //使用者輸入兩個數字相加
+        // const a = window.prompt('請輸入數字1', 0);
+        // const b = window.prompt('請輸入數字2', 0);
+        // // console.log(typeof Number(a));  //number
+        // // console.log(typeof b);  //string
+        // console.log(Number(a) + Number(b));
 
 
         //練習兩個數字交換
@@ -84,6 +84,46 @@
         console.log(`x=${x}, y=${y}`);
 
         //印出x=20,y=10
+
+
+        //明確型別轉換
+        let z = "50.34ab";
+        console.log(Number(z)); //NaN => Not a Number 不是數值
+        console.log(parseInt(z, 10)); //50
+        console.log(parseFloat(z)); //50.34
+
+
+        console.log(parseInt("10", 10));      //10
+        console.log(parseInt("1A", 10));      //1
+        console.log(parseInt("1A", 16));       //? 26  
+        console.log(parseInt("15.6", 10));    //15
+        console.log(parseInt("A1", 10));       //1? NaN
+
+        console.log(parseFloat('12'));  //12
+        console.log(parseFloat('12.1a23')); //12.1        
+        console.log(parseFloat('a12.12'));  //NaN
+
+        //Boolean => true or false
+        //會轉型成 false 的值： ''、 NaN、null、0、undefined
+        console.log(Boolean(''));  //false
+        console.log(Boolean(NaN));  //false
+        console.log(Boolean(null));  //false
+        console.log(Boolean(0));  //false        
+        console.log(Boolean(undefined));  //false
+
+        console.log(Boolean(50));  //true        
+        console.log(Boolean('false'));  //true   
+
+
+        //隱含型別轉換
+        console.log(typeof (10 + ""));  //string
+        console.log(typeof "10");  //string
+        console.log(typeof +"10");  //number
+        // !  => not
+        console.log(typeof 0); //number
+        console.log(typeof !0); //boolean
+        console.log(!0); //true or false   not false => true
+        console.log(!!0); //true or false   not not false => not true => false
 
 
 
