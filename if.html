@@ -73,9 +73,42 @@
 
 
         const theDay = new Date().getDay(); // 3 星期三 0-6
+        let aDay = '';
+        switch (theDay) {
+            case 0:
+                aDay = '日';
+                break;
+            case 1:
+                aDay = '一';
+                break;
+            case 3:
+                aDay = '三'
+                break;
+            default:
+                aDay = '不知'
+
+        }
+
+        console.log(`今天是星期${aDay}`);
 
 
-        console.log(`今天是星期三`)
+        switch (theDay) {
+            case 0:
+            case 6:
+                aDay = 'weekend';
+                break;
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                aDay = 'weekday'
+                break;
+            default:
+                aDay = '不知'
+
+        }
+        console.log(`今天是 ${aDay}`);
 
     </script>
 </body>
