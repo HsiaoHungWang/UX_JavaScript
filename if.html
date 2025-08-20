@@ -19,11 +19,21 @@
             console.log('票價為 300');
         }
 
-        let num1 = window.prompt('請輸入數字1', 0);
-        let num2 = window.prompt('請輸入數字2', 0);
+        //Number()、parseInt()、parseFloat()、+
+        let num1 = +window.prompt('請輸入數字1', 0);
+        let num2 = +window.prompt('請輸入數字2', 0);
+
+        console.log(typeof num1)
+        console.log(typeof num2)
 
         //比大小
         //印出 num1 比較大
+
+        if (num1 > num2) {
+            console.log(`num1：${num1} 大`)
+        } else {
+            console.log(`num2：${num2} 大`)
+        }
 
     </script>
 </body>
