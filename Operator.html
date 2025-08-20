@@ -17,6 +17,24 @@
 
         let b = 10 * ++a;
         console.log(`a = ${a}, b = ${b}`);  //a=11, b=110
+
+        //比較運算子 (comparision operator)
+        console.log(10 == '10'); //true  會把'10'隱含轉型成10再比較
+        console.log(10 === '10'); //false 嚴格比較，比較資料型態是否一致
+        console.log(10 > 8); //true
+        console.log('a' > 'b'); //false
+        console.log('a' > 'A'); //true
+        console.log('a' > '5'); //true
+        console.log('a' > 5); //false  會把'a'隱含轉型成數值，會得到NaN，NaN 比較一定是false
+        console.log(undefined == null); //true
+        console.log(undefined === null); //false
+
+        // console.log('a'.charCodeAt());  //97
+        // console.log('b'.charCodeAt());  //98
+        //console.log('A'.charCodeAt());  //65
+        //console.log('5'.charCodeAt());     //53
+
+
     </script>
 </body>
 
