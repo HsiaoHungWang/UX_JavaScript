@@ -34,6 +34,59 @@
         //console.log('A'.charCodeAt());  //65
         //console.log('5'.charCodeAt());     //53
 
+        // =    指定
+        // ==   比較寬鬆
+        // ===  比較嚴格
+
+        //邏輯運算子(logical operator)
+        // console.log(true && false); //false
+        // console.log(true || false); //true
+
+        let 錢多 = true;
+        let 事少 = false;
+        let 離家近 = true;
+
+        console.log((錢多 || 事少) && 離家近);
+        console.log('=====================')
+        console.log(false && 'abc' && 錢多 && 事少);  //false   &&運算子只要有一個是false，結果就是false,後面的比較就不要用做了
+        console.log(true && 'abc');   //abc
+        console.log(false || 'xyz');  //xyz     
+        console.log(true || 'xyz');   //true  ||運算子只要有一個是true,結果就一定是true,所以後面的比較就不要做了
+
+
+        let userName = 'Tom';
+
+        //if (userName === '') {
+        // if (!userName) {
+        //     console.log('guest');
+        // } else {
+        //     console.log(userName);
+        // }
+
+        // || shortcut  是為了給預設值
+        console.log(userName || 'guest');  //userName 如果 true，結果一定是true，後面的程式就不需要執行了
+
+
+
+        const user = { "userName": "Jack", "age": 30, contact: { "phone": "0911222333", "email": "jack@gmail.com" } };
+        console.log(user.userName); //Jack
+        console.log(user.age); //30
+        console.log(user.contact); //{phone: '0911222333', email: 'jack@gmail.com'}
+        console.log(user.contact && user.contact.phone); //0911222333
+        console.log(user.contact && user.contact.email); //jack@gmail.com
+
+        const user1 = { "userName": "Tom", "age": 30 };
+        //console.log(user1.contact.email); //Uncaught TypeError: Cannot read properties of undefined (reading 'email')
+        //&& shortcut 用來檢查資料是否存在
+        console.log(user1.contact && user1.contact.email);
+        console.log(user1.userName);
+
+
+
+
+
+
+
 
     </script>
 </body>
