@@ -80,9 +80,10 @@
         //&& shortcut 用來檢查資料是否存在
         console.log(user1.contact && user1.contact.email);  //undefined
 
+        console.log(user1.contact ? user1.contact.email : '查無聯絡方式');
+
 
         console.log(user1.userName);
-
 
 
         //條件(三元)運算子(conditional operator) ?:
@@ -96,11 +97,18 @@
         console.log(age >= 18 ? '可以投票' : '不能投票');
 
         let isLogin = false;
-        if (isLogin) {
-            console.log('登出');
-        } else {
-            console.log('請先登入');
-        }
+        // if (isLogin) {
+        //     console.log('登出');
+        // } else {
+        //     console.log('請先登入');
+        // }
+
+        console.log(isLogin ? '登出' : '請先登入');
+
+        console.log(3 + 4 - 2); //5
+        console.log(25 < 10 + 3 * 4);  // 25 < 22 => false
+        console.log(6 / 2 * (1 + 2));  // 6 / 2 * 3 => 3 * 3 => 9
+        console.log(25 < (10 + 3) * 4);  // 25 < 13 * 4 => 25  < 52 => true
 
 
 
