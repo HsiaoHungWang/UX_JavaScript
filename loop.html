@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+    <div id="div1"></div>
     <script>
         // //for(初值 ; 條件式 ; 更新初值)
         // for (let i = 0; i < 100; i++) {
@@ -31,24 +31,40 @@
         // console.log(4 % 2);
         // console.log(9 % 3);
 
-        //while
-        let i = 1;
-        let total = 0;
-        while (i <= 100) {
-            total += i;
-            i++;
-        }
-        console.log(`1+2+3...+99+100=${total}`);
+        // //while
+        // let i = 1;
+        // let total = 0;
+        // while (i <= 100) {
+        //     total += i;
+        //     i++;
+        // }
+        // console.log(`1+2+3...+99+100=${total}`);
 
-        let x = 0;
-        while (x <= 10) {
-            x++;
-            if (x % 2 !== 0) {
-                continue;
+        // let x = 0;
+        // while (x <= 10) {
+        //     x++;
+        //     if (x % 2 !== 0) {
+        //         continue;
 
-            }
-            console.log(x);
+        //     }
+        //     console.log(x);
+        // }
+
+
+        const scores = [79, 65, 83, 91, 75, 87];
+        // console.log(scores[3]); //91
+        // const [s1, s2] = scores;
+        // console.log(s2); //65
+        //for、while、do..while
+        // for (初值; 條件式; 更新初值) {
+        //     //條件式為True
+        // }
+        console.log(scores.length);  //length 取得陣列中有多少筆資料
+
+        for (let i = 0, max = scores.length; i < max; i++) {
+            console.log(scores[i]);
         }
+        //印出最高的分數在div中
 
 
 
