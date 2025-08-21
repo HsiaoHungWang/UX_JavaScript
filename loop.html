@@ -51,7 +51,7 @@
         // }
 
 
-        const scores = [79, 65, 83, 91, 75, 87];
+        const scores = [79, 95, 83, 91, 75, 87];
         // console.log(scores[3]); //91
         // const [s1, s2] = scores;
         // console.log(s2); //65
@@ -64,12 +64,19 @@
         // for (let i = 0, max = scores.length; i < max; i++) {
         //     console.log(scores[i]);
         // }
-        //印出最高的分數在div中
 
-        //for...of
-        // for (let score of scores) {
-        //     console.log(score);
-        // }
+
+        // for...of
+        let maxScore = scores[0];
+        for (let score of scores) {
+            //console.log(score);
+            if (score > maxScore) {
+                maxScore = score;
+            }
+        }
+        //印出最高的分數在div中
+        const myDiv = document.querySelector('#div1');
+        myDiv.textContent = `最高的分數是 ${maxScore}`;
 
         //for...in  讀陣列得到的是陣列的索引值
         // for (let idx in scores) {
@@ -77,16 +84,16 @@
         //     console.log(scores[idx]);
         // }
         //{key:value}
-        const student = { "name": "Jack", "score": 80 };
+        // const student = { "name": "Jack", "score": 80 };
         // console.log(student.name);
         // console.log(student["score"]);
         // const { name, score } = student;
         // console.log(name);
 
-        for (let key in student) {
-            console.log(key);
-            console.log(student[key]);
-        }
+        // for (let key in student) {
+        //     console.log(key);
+        //     console.log(student[key]);
+        // }
 
         //讀陣列中的所有資料使用 for...of 不能讀物件
         //讀物件中的所有資料使用 for...in 
