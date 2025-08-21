@@ -114,8 +114,30 @@
             }
         }
         //印出最高的分數在div中
-        const myDiv = document.querySelector('#div1');
-        myDiv.textContent = `最高分的學生是${maxScoreStudent.name}, 分數是 ${maxScoreStudent.score}`;
+        // const myDiv = document.querySelector('#div1');
+        // myDiv.textContent = `最高分的學生是${maxScoreStudent.name}, 分數是 ${maxScoreStudent.score}`;
+
+        // while (true) {
+        //     const text = window.prompt('輸入 quit 離開');
+        //     if (text === 'quit') {
+        //         break;
+        //     }
+        //     window.alert(text);
+        // }
+
+        //內建物件、方法 Number("123")
+
+        //Date 物件 => getHours() getDay() getMonth() getYear() get...()...
+        //Math 物件 => .....max(1,2,3)
+
+        //new Date('2020/10/10') => 得到現在的時間
+        //Math
+        //1-100
+        const rnd = Math.random();  //0....  亂數會產生0-1的值    
+        //Math.floor() 會捨去小數，取得整數位數  
+        console.log(Math.floor(rnd * 100) + 1);
+
+
 
 
 
