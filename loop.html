@@ -66,17 +66,17 @@
         // }
 
 
-        // for...of
-        let maxScore = scores[0];
-        for (let score of scores) {
-            //console.log(score);
-            if (score > maxScore) {
-                maxScore = score;
-            }
-        }
-        //印出最高的分數在div中
-        const myDiv = document.querySelector('#div1');
-        myDiv.textContent = `最高的分數是 ${maxScore}`;
+        // // for...of
+        // let maxScore = scores[0];
+        // for (let score of scores) {
+        //     //console.log(score);
+        //     if (score > maxScore) {
+        //         maxScore = score;
+        //     }
+        // }
+        // //印出最高的分數在div中
+        // const myDiv = document.querySelector('#div1');
+        // myDiv.textContent = `最高的分數是 ${maxScore}`;
 
         //for...in  讀陣列得到的是陣列的索引值
         // for (let idx in scores) {
@@ -97,6 +97,25 @@
 
         //讀陣列中的所有資料使用 for...of 不能讀物件
         //讀物件中的所有資料使用 for...in 
+
+
+        const students = [
+            { "name": "Jack", "score": 80 },
+            { "name": "Mary", "score": 75 },
+            { "name": "Tom", "score": 93 },
+            { "name": "Fiona", "score": 86 }
+        ];
+        //for(宣告變數 of 陣列)
+        let maxScoreStudent = students[0];  // { "name": "Jack", "score": 80 }
+        for (let student of students) {
+            // console.log(student); // { "name": "Jack", "score": 80 }
+            if (student.score > maxScoreStudent.score) {
+                maxScoreStudent = student;
+            }
+        }
+        //印出最高的分數在div中
+        const myDiv = document.querySelector('#div1');
+        myDiv.textContent = `最高分的學生是${maxScoreStudent.name}, 分數是 ${maxScoreStudent.score}`;
 
 
 
