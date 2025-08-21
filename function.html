@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="scripts/main.js"></script>
+    <script>
+        console.log(tempatureConvert(0, 'C'));
+        console.log(tempatureConvert(32, 'F'));
+
+
+        //
+        // function sayHi() {
+        //     return 'Hello World!!';
+        // }
+
+        // //function 呼叫
+        // const message = sayHi();
+        // console.log(message);
+
+        //定義一個function給了一個name參數
+        function sayHi(name) {
+            return `Hello ${name}!!`;
+        }
+        function celsius_to_fahrenheit(degreeC) {
+            let degreeF = degreeC * (9 / 5) + 32;
+            return degreeF;
+        }
+
+        //函式呼叫
+        const c = 30;
+        const f = celsius_to_fahrenheit(30);
+        console.log(`攝氏 ${c}℃ 可以轉化成華式 ${f}℉`)
+
+
+        //function 呼叫
+        console.log(sayHi('Eric'));
+        console.log(sayHi('Tom'));
+        console.log(sayHi('Mary'));
+    </script>
+</body>
+
+</html>
