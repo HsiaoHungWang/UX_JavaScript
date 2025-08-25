@@ -91,6 +91,15 @@
 
         const strMail = 'wang@ispan.com@tw';
 
+        //RegExp 物件  /pattern/
+
+        //a123456789 身分證號
+        const re = /^[a-zA-Z]{1}[1-2]{1}\d{8}$/;
+        console.log(re.test('1234567890'));  //false
+        console.log(re.test('a234567890'));  //true
+        console.log(re.test('a334567890'));  //false
+
+
 
 
     </script>
