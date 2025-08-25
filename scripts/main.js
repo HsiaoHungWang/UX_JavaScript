@@ -36,11 +36,27 @@ const calcBMI = (height, w) => {
     return { "bmi": bmi.toFixed(2), "message": message };
 }
 
-const max = (num1, num2) => {
-    let max = num1;
-    if (num1 < num2) {
-        max = num2;
+// const max = (num1, num2) => {
+//     let max = num1;
+//     if (num1 < num2) {
+//         max = num2;
+//     }  
+//     return max;
+// }
+
+//... 其餘運算子（rest operator）
+const max = (...nums) => {
+    //...會把傳進來的所有資料變成是一個陣列放進 nums 中
+    let maxNum = nums[0];
+    for (let num of nums) {
+        //console.log(score);
+        if (num > maxNum) {
+            maxNum = num;
+        }
     }
-    return max;
+
+    return maxNum;
 }
+
+
 
