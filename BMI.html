@@ -8,16 +8,47 @@
 </head>
 
 <body>
+    <div>
+        <label>身高：<input type="text" id="inputHeight" /> </label>
+    </div>
+    <div>
+        <label>體重：<input type="text" id="inputWeight" /> </label>
+    </div>
+    <div>
+        <button id="buttonCalcBMI">BMI 計算</button>
+    </div>
+    <div id="divMessage"></div>
+
+
+
+
+
+
     <!-- 作業 BMI 計算 -->
     <script src="scripts/main.js"></script>
     <script>
 
-        let myBmi = calcBMI(175, 70);
-        console.log(`BMI：${myBmi.bmi}, ${myBmi.message}`);
-        myBmi = calcBMI(175, 80);
-        console.log(`BMI：${myBmi.bmi}, ${myBmi.message}`);
-        myBmi = calcBMI(179, 55);
-        console.log(`BMI：${myBmi.bmi}, ${myBmi.message}`);
+        //步驟一找到要控制的對象
+        const inpHeight = document.querySelector('#inputHeight');
+        const inpWeight = document.querySelector('#inputWeight');
+        const btnCalcBMI = document.querySelector('#buttonCalcBMI');
+        const divMsg = document.querySelector('#divMessage');
+
+        //步驟二什麼時候(甚麼情況發生) => 事件
+        btnCalcBMI.addEventListener('click', () => {
+            //步驟三做甚麼事 BMI計算
+            let myBmi = calcBMI(inpHeight.value, inpWeight.value);
+            divMsg.textContent = `BMI：${myBmi.bmi}, ${myBmi.message}`;
+        })
+
+
+
+        // let myBmi = calcBMI(175, 70);
+        // console.log(`BMI：${myBmi.bmi}, ${myBmi.message}`);
+        // myBmi = calcBMI(175, 80);
+        // console.log(`BMI：${myBmi.bmi}, ${myBmi.message}`);
+        // myBmi = calcBMI(179, 55);
+        // console.log(`BMI：${myBmi.bmi}, ${myBmi.message}`);
 
 
 
