@@ -1,4 +1,4 @@
-function tempatureConvert(degree, type) {
+const tempatureConvert = (degree, type) => {
     //type => C、F
     let result;
     if (type === 'C') {
@@ -14,7 +14,7 @@ function tempatureConvert(degree, type) {
 }
 
 //BMI = 體重(公斤)/身高(公尺)的平方
-function calcBMI(height, w) {
+const calcBMI = (height, w) => {
     const h = height / 100; //公尺
     //const w = weight; //公斤
     const bmi = w / (h * h); // h ** 2

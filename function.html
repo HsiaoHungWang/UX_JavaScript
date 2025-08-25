@@ -15,7 +15,7 @@
         console.log(tempatureConvert(32, 'F'));
 
 
-        //
+
         // function sayHi() {
         //     return 'Hello World!!';
         // }
@@ -23,11 +23,31 @@
         // //function 呼叫
         // const message = sayHi();
         // console.log(message);
-
+        //console.log(sayHi('Mary'));
         //定義一個function給了一個name參數
-        function sayHi(name) {
-            return `Hello ${name}!!`;
+        //函式宣告式(function declaration)
+        // function sayHi(name) {
+        //     return `Hello ${name}!!`;
+        // }
+
+        //函式表達式(function expression) => 匿名函式
+        // const sayHi = function (name) {
+        //     return `Hello ${name}!!`;
+        // }
+
+
+        //箭頭函式(Arrow functions)
+        // const sayHi = (name) => {
+        //     return `Hello ${name}!!`;
+        // }
+        const hi = () => {
+            return 'Hello World!!';
         }
+
+        //const sayHi = name => { return `Hello ${name}!!`; }
+
+        const sayHi = name => `Hello ${name}!!`;
+
         function celsius_to_fahrenheit(degreeC) {
             let degreeF = degreeC * (9 / 5) + 32;
             return degreeF;
