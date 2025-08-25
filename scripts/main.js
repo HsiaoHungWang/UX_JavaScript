@@ -36,3 +36,11 @@ const calcBMI = (height, w) => {
     return { "bmi": bmi.toFixed(2), "message": message };
 }
 
+const max = (num1, num2) => {
+    let max = num1;
+    if (num1 < num2) {
+        max = num2;
+    }
+    return max;
+}
+

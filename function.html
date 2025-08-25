@@ -60,9 +60,23 @@
 
 
         //function 呼叫
-        console.log(sayHi('Eric'));
+        console.log(sayHi());
         console.log(sayHi('Tom'));
-        console.log(sayHi('Mary'));
+        console.log(sayHi('Mary', 'Lee'));
+
+
+        //參數宣告時給予預設值
+        const getSum = (num1 = 2, num2 = 3) => num1 + num2;
+
+        console.log(getSum()); //5
+        console.log(getSum(5)); //8
+        console.log(getSum(1, 2)); //3
+
+
+        console.log(max(1, 2)); //2
+        console.log(max(5, 3)); //5
+
+
     </script>
 </body>
 
