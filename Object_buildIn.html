@@ -17,11 +17,19 @@
     <div>
         <label>圖檔名稱：<input type="text" id="inputFileName" /></label>
     </div>
+    <div>
+        <label>出生日期：<input type="date" id="inputDate" /><span></span>
+
+        </label>
+    </div>
+
     <div id="divMessage"></div>
     <script src="scripts/validation.js"></script>
     <script>
         const inpMail = document.querySelector('#inputMail');
         const inpFileName = document.querySelector('#inputFileName');
+        const inpDate = document.querySelector('#inputDate');
+        const spnAge = document.querySelector('#inputDate~span');
         const btnCheck = document.querySelector('#buttonCheck');
         const divMsg = document.querySelector('#divMessage');
 
@@ -49,6 +57,12 @@
 
 
         })
+
+
+        inpDate.addEventListener('blur', () => {
+            spnAge.textContent = calcAge(inpDate.value);
+        })
+
 
         //Global 物件的方法
         //isNaN => 不是數值

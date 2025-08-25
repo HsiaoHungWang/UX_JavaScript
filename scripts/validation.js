@@ -20,3 +20,12 @@ const checkImageFile = fileName => {
     return imgExtensions.includes(extensions);
 
 }
+
+const calcAge = strDate => {
+    const today = new Date();
+    const birthDate = new Date(strDate);
+
+    let age = today.getFullYear() - birthDate.getFullYear();
+
+    return age;
+}
