@@ -12,16 +12,20 @@
         <label>電子郵件：<input type="email" id="inputMail" /></label>
     </div>
     <div>
-        <button id="buttonCheck">檢查</button>
+        <!-- <button id="buttonCheck">檢查</button> -->
+    </div>
+    <div>
+        <label>圖檔名稱：<input type="text" id="inputFileName" /></label>
     </div>
     <div id="divMessage"></div>
     <script src="scripts/validation.js"></script>
     <script>
         const inpMail = document.querySelector('#inputMail');
+        const inpFileName = document.querySelector('#inputFileName');
         const btnCheck = document.querySelector('#buttonCheck');
         const divMsg = document.querySelector('#divMessage');
 
-        btnCheck.addEventListener('click', () => {
+        inpMail.addEventListener('blur', () => {
             //email格式檢查
             const mail = inpMail.value;
 
@@ -31,6 +35,19 @@
             } else {
                 divMsg.textContent = 'Email格式錯誤';
             }
+        })
+
+
+        inpFileName.addEventListener('blur', () => {
+            //檢查是不是圖檔  a.jpg、a.png..
+            const fileName = inpFileName.value;
+            if (checkImageFile(fileName)) {
+                divMsg.textContent = "是圖檔";
+            } else {
+                divMsg.textContent = "請輸入圖檔";
+            }
+
+
         })
 
         //Global 物件的方法
