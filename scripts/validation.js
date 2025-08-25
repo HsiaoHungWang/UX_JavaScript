@@ -45,3 +45,26 @@ const calcAge = strDate => {
     }
     return age;
 }
+
+const checkPersonId = id => {
+    const re = /^[a-zA-Z]{1}[1-2]{1}\d{8}$/;
+    return re.test(id);
+}
+
+const checkPhone = phone => {
+    //0911-222-333
+    const re = /^09\d{2}-\d{3}-\d{3}$/;
+    return re.test(phone);
+
+}
+
+const checkMailByRegexp = mail => {
+    const re = /^.+@.+\..{2,3}$/;
+    return re.test(mail);
+}
+
+const checkPassword = pwd => {
+    //6 位數以上，並且至少包含 大寫字母、小寫字母、數字、符號 各一
+    const re = /^(?=.*[^a-zA-Z0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/;
+    return re.test(pwd);
+}
