@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>電子郵件：<input type="email" /><button>檢查</button></label>
+    <script>
+        //Global 物件的方法
+        //isNaN => 不是數值
+        // console.log(isNaN('abcd')); //abcd不是數值所以回傳 true
+        // console.log(isNaN('123')); //123是字串的數值所以回傳 false
+
+        // //編碼 解碼
+        // const strUrl = 'https://www.ispan.com.tw?search=UIUX設計師&key=value!@#$%';
+        // //編碼
+        // console.log(encodeURI(strUrl));
+        // console.log(encodeURIComponent(strUrl));
+        // //解碼
+        // console.log(decodeURIComponent('%3F'));  //?
+        // console.log(decodeURIComponent('%3D'));  //=
+        // console.log(decodeURI('%E8%A8%AD')); //設
+
+
+        //String Object
+        //let str =  new String('JavaScript');
+        let str = 'JavaScript';  //str  => 就是字串物件
+
+        console.log(str.indexOf('@')); //找字串的字元，找到後回傳字元的索引值，找不到回傳-1
+        console.log(str.indexOf('a'));  //1
+        console.log(str.lastIndexOf('a')); //3
+
+        const strMail = 'wang@ispan.com@tw';
+
+
+
+    </script>
+</body>
+
+</html>
