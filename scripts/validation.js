@@ -27,5 +27,21 @@ const calcAge = strDate => {
 
     let age = today.getFullYear() - birthDate.getFullYear();
 
+
+    let isPassed = false;
+
+    if (today.getMonth() > birthDate.getMonth()) {
+        isPassed = true;
+    } else if (today.getMonth() < birthDate.getMonth()) {
+        isPassed = false;
+    } else {
+        isPassed = today.getDate() > birthDate.getDate();
+    }
+
+
+
+    if (!isPassed) {
+        age -= 1;
+    }
     return age;
 }
