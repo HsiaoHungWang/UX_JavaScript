@@ -8,8 +8,31 @@
 </head>
 
 <body>
-    <label>電子郵件：<input type="email" /><button>檢查</button></label>
+    <div>
+        <label>電子郵件：<input type="email" id="inputMail" /></label>
+    </div>
+    <div>
+        <button id="buttonCheck">檢查</button>
+    </div>
+    <div id="divMessage"></div>
+    <script src="scripts/validation.js"></script>
     <script>
+        const inpMail = document.querySelector('#inputMail');
+        const btnCheck = document.querySelector('#buttonCheck');
+        const divMsg = document.querySelector('#divMessage');
+
+        btnCheck.addEventListener('click', () => {
+            //email格式檢查
+            const mail = inpMail.value;
+
+
+            if (checkMail(mail)) {
+                divMsg.textContent = 'Email格式正確';
+            } else {
+                divMsg.textContent = 'Email格式錯誤';
+            }
+        })
+
         //Global 物件的方法
         //isNaN => 不是數值
         // console.log(isNaN('abcd')); //abcd不是數值所以回傳 true
@@ -33,6 +56,7 @@
         console.log(str.indexOf('@')); //找字串的字元，找到後回傳字元的索引值，找不到回傳-1
         console.log(str.indexOf('a'));  //1
         console.log(str.lastIndexOf('a')); //3
+        console.log(`lenght:${str.length}`);  //10  index 0-9
 
         const strMail = 'wang@ispan.com@tw';
 
