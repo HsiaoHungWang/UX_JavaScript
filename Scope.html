@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //廣域變數：變數宣告後所有function都可以用，變數只要宣告在function外就是廣域變數
+        //區域變數：變數需告只在宣告的區塊{ }中可以使用
+        let name = "Jack"; //name是廣域變數
+        const f1 = () => {
+            let age = 30 //age是區域變數  
+
+            if (true) {
+                let a = "abc";
+                var b = "xyz";
+            }
+            console.log(b);  //xyz
+            console.log(a);  //abc??? Uncaught ReferenceError: a is not defined
+            console.log(`Hello ${name}, You are ${age} years old.`); //name 
+            // Uncaught ReferenceError: Cannot access 'name' before initialization
+            //let name = "Tom";
+        }
+        //console.log(age);
+        const f2 = () => {
+            //Uncaught ReferenceError: age is not defined 沒有宣告過age，JavaScript Engine看不懂age是甚麼
+            console.log(`Hello ${name}, You are ${age} years old.`);
+        }
+
+        f1();
+        // f2();
+    </script>
+</body>
+
+</html>
