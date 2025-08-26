@@ -84,21 +84,32 @@
         const btnAdd = document.querySelector('#buttonAdd');
 
         //JSON
-        const emps = [{"name":"Tom","workYears":3,"salary":35000},
-                     {"name":"Jack","workYears":5,"salary":40000},
-                     {"name":"Mary","workYears":7,"salary":45000}];
+        // const emps = [{"name":"Tom","workYears":3,"salary":35000},
+        //              {"name":"Jack","workYears":5,"salary":40000},
+        //              {"name":"Mary","workYears":7,"salary":45000}];
+
+        let emps = [];
 
 
         btnAdd.addEventListener('click',()=>{
             const emp ={"name":inpName.value,"workYears":inpYear.value,"salary":inpSalary.value};
             console.log(emp);
             //怎麼加到 emps 陣列中?
+             emps.push(emp);
+
+            //儲存JSON資料
+            localStorage.setItem("emps",JSON.stringify(emps));
+            //讀出資料
+            // const datas = JSON.parse(localStorage.getItem("emps"));
+            // console.log(datas[0]);
 
             loadDatas();
         })
 
 
    const loadDatas = ()=>{
+    //從localStorage中讀取JSON資料
+     emps = JSON.parse(localStorage.getItem("emps"));
              const lis = emps.map(emp=>{
             const {name,workYears,salary} = emp;
             return(
