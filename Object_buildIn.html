@@ -119,20 +119,42 @@
 
         console.log(`原有陣列中的資料：${arr1}`);
         console.log(`陣列中有幾筆資料：${arr1.length}`);  //3
+
+        //splice 刪除(start, delectCount)
+        // arr1.splice(1, 2); //從索引直1的位置開始刪除兩筆資料
+
+        //splice 插入新的項目(start, 0, 'e', 'f');
+        // arr1.splice(1, 0, 'e', 'f');
+
+        //splice 修改 (start, deleteCouent, 'e')
+        arr1.splice(2, 1, 'e');
+        console.log(arr1); //[b,e,a,c]
+
+
+
+
         // //刪除陣列第二個位置的內容
         // delete arr1[1];
         // console.log(`刪除後陣列中的資料：${arr1}`);
-        console.log(`陣列轉字串join()用_號串接：${arr1.join('_')}`);
-        console.log(`陣列轉字串用''串接：${arr1.join('')}`);
-        console.log(`陣列反轉reverse()，轉成字串用''串接：${arr1.reverse().join('')}`);
-        console.log(`陣列排序sort()，轉成字串用''串接：${arr1.sort().join('')}`);
+        // console.log(`陣列轉字串join()用_號串接：${arr1.join('_')}`);
+        // console.log(`陣列轉字串用''串接：${arr1.join('')}`);
+        // console.log(`陣列反轉reverse()，轉成字串用''串接：${arr1.reverse().join('')}`);
+        // console.log(`陣列排序sort()，轉成字串用''串接：${arr1.sort().join('')}`);
 
-        const arr2 = [5, 32, 17, 8, 63];
-        console.log(`數字陣列排序 sort()：${arr2.sort()}`) //[5,8,17,32,63]不對 [17,32,5,63,8]
-        console.log(`數字陣列排序 sort((a,b)=>a-b)：${arr2.sort((a, b) => a - b)}`); //[5,8,17,32,63]
-        //a-b 為負 3-5 =>35 a在前面b在後面
-        //a-b 為正 5-4 =>45 b在前面a在後面
-        console.log(`數字陣列排序 sort((a,b)=>b-a)：${arr2.sort((a, b) => b - a)}`); //?
+        // const arr2 = [5, 32, 17, 8, 63];
+        // console.log(`數字陣列排序 sort()：${arr2.sort()}`) //[5,8,17,32,63]不對 [17,32,5,63,8]
+        // console.log(`數字陣列排序 sort((a,b)=>a-b)：${arr2.sort((a, b) => a - b)}`); //[5,8,17,32,63]
+        // //a-b 為負 3-5 =>35 a在前面b在後面
+        // //a-b 為正 5-4 =>45 b在前面a在後面
+        // console.log(`數字陣列排序 sort((a,b)=>b-a)：${arr2.sort((a, b) => b - a)}`); //[63,32,17,8,5]
+        //b-a 32-5 為正 b32在前面a5在後面
+        //    17-5 為正 b17在前面a5在後面
+        //    8-5  為正 b8在前面a5在後面
+        //    63-5 為正 b63在前面a5在後面
+
+
+
+
 
 
 
