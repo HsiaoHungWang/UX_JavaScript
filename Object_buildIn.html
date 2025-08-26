@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+ 
 </head>
 
 <body>
@@ -30,6 +32,37 @@
        
     </ul>
 
+
+    <table id="tableEmployee" class="table table-bordered">
+      <thead>
+        <tr>
+            <th>姓名</th>
+            <th>年資</th>
+            <th>薪水</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td>Tom</td>
+            <td>3</td>
+            <td>50000</td>
+        </tr>
+        <tr>
+            <td>Tom</td>
+            <td>3</td>
+            <td>50000</td>
+        </tr>
+        <tr>
+            <td>Tom</td>
+            <td>3</td>
+            <td>50000</td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+ 
+
     <script src="scripts/validation.js"></script>
     <script>
         const inpMail = document.querySelector('#inputMail');
@@ -39,6 +72,7 @@
         const btnCheck = document.querySelector('#buttonCheck');
         const divMsg = document.querySelector('#divMessage');
         const ulNames = document.querySelector('#ul1');
+        const tbodyEmployee = document.querySelector('#tableEmployee > tbody');
 
         inpMail.addEventListener('blur', () => {
             //email格式檢查
@@ -159,11 +193,19 @@
                      {"name":"Mary","workYears":7,"salary":45000}];
 
         const lis = emps.map(emp=>{
+            const {name,workYears,salary} = emp;
             return(
-                `<li>${emp.name}</li>`
+                // `<li>${emp.name}</li>`
+                `<tr>
+                    <td>${name}</td>
+                    <td>${workYears}</td>
+                    <td>${salary}</td>
+                </tr>                
+                
+                `
             )
         })
-        ulNames.innerHTML = lis.join('');
+        tbodyEmployee.innerHTML = lis.join('');
         
         
         // emps.forEach(emp=>{
