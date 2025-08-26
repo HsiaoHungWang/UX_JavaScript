@@ -68,3 +68,13 @@ const checkPassword = pwd => {
     const re = /^(?=.*[^a-zA-Z0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/;
     return re.test(pwd);
 }
+
+// export default checkEmpty = data => {
+//     if (data.length === 0) {
+//         return false;
+//     } else {
+//         return true;
+//     }
+// }
+
+export { checkImageFile, calcAge, checkPersonId, checkPhone, checkMailByRegexp, checkPassword }
