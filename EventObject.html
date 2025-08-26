@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputText" />
+
+    <script>
+        const inpText = document.querySelector('#inputText');
+        //事件物件=>事件處理函式，函式中的第一個參數就是事件物件
+        inpText.addEventListener('keydown', event => {
+            //event 就是事件物件
+            console.log(event);
+        });
+    </script>
+</body>
+
+</html>

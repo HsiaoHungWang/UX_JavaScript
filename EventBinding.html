@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="binding1" onclick="f1()"><!--JS框架常見的寫法-->
+    <input type="button" value="binding2" id="button1">
+    <input type="button" value="binding3" id="button2">
+
+    <script>
+        const f1 = () => {
+            alert('Hello!!');
+            console.log('click');
+            console.log('f1');
+        }
+
+        //比較不會這樣寫
+        const btn1 = document.querySelector('#button1');
+        btn1.onclick = f1;
+
+        const btn2 = document.querySelector('#button2');
+        //W3C DOM => 定義了用 addEventListener()綁定事件
+        btn2.addEventListener('click', f1);
+
+
+    </script>
+</body>
+
+</html>
