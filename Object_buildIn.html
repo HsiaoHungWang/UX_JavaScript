@@ -31,8 +31,10 @@
        
     </ul>
 
-
-    <table id="tableEmployee" class="table table-bordered">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                 <table id="tableEmployee" class="table table-bordered">
       <thead>
         <tr>
             <th>姓名</th>
@@ -40,25 +42,27 @@
             <th>薪水</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-            <td>Tom</td>
-            <td>3</td>
-            <td>50000</td>
-        </tr>
-        <tr>
-            <td>Tom</td>
-            <td>3</td>
-            <td>50000</td>
-        </tr>
-        <tr>
-            <td>Tom</td>
-            <td>3</td>
-            <td>50000</td>
-        </tr>
-        
+      <tbody>   
       </tbody>
     </table>
+            </div>
+            <div class="col-4">
+                <div>
+                    <input type="text" placeholder="姓名" id="inputName" class="form-control m-2" />
+                </div>
+                <div>
+                    <input type="text" placeholder="年資" id="inputYear" class="form-control m-2" />
+                </div>
+                <div>
+                    <input type="text" placeholder="薪水" id="inputSalary" class="form-control m-2" />
+                </div>
+                <div>
+                    <button class="btn btn-primary  m-2" id="buttonAdd">新增</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   
 
 
 
@@ -72,6 +76,49 @@
         const divMsg = document.querySelector('#divMessage');
         const ulNames = document.querySelector('#ul1');
         const tbodyEmployee = document.querySelector('#tableEmployee > tbody');
+
+
+        const inpName = document.querySelector('#inputName');
+        const inpYear = document.querySelector('#inputYear');
+        const inpSalary = document.querySelector('#inputSalary');
+        const btnAdd = document.querySelector('#buttonAdd');
+
+        //JSON
+        const emps = [{"name":"Tom","workYears":3,"salary":35000},
+                     {"name":"Jack","workYears":5,"salary":40000},
+                     {"name":"Mary","workYears":7,"salary":45000}];
+
+
+        btnAdd.addEventListener('click',()=>{
+            const emp ={"name":inpName.value,"workYears":inpYear.value,"salary":inpSalary.value};
+            console.log(emp);
+            //怎麼加到 emps 陣列中?
+
+            loadDatas();
+        })
+
+
+   const loadDatas = ()=>{
+             const lis = emps.map(emp=>{
+            const {name,workYears,salary} = emp;
+            return(
+                // `<li>${emp.name}</li>`
+                `<tr>
+                    <td>${name}</td>
+                    <td>${workYears}</td>
+                    <td>${salary}</td>
+                </tr>                
+                
+                `
+            )
+        })
+        tbodyEmployee.innerHTML = lis.join('');
+        }
+
+
+  loadDatas();
+
+
 
         inpMail.addEventListener('blur', () => {
             //email格式檢查
@@ -103,7 +150,7 @@
             spnAge.textContent = calcAge(inpDate.value);
         })
 
-
+     
         //Global 物件的方法
         //isNaN => 不是數值
         // console.log(isNaN('abcd')); //abcd不是數值所以回傳 true
@@ -186,25 +233,9 @@
         // const datas = arr2.map(item=>item * 2)
         // console.log(datas);
 
-        //JSON
-        const emps = [{"name":"Tom","workYears":3,"salary":35000},
-                     {"name":"Jack","workYears":5,"salary":40000},
-                     {"name":"Mary","workYears":7,"salary":45000}];
+        
 
-        const lis = emps.map(emp=>{
-            const {name,workYears,salary} = emp;
-            return(
-                // `<li>${emp.name}</li>`
-                `<tr>
-                    <td>${name}</td>
-                    <td>${workYears}</td>
-                    <td>${salary}</td>
-                </tr>                
-                
-                `
-            )
-        })
-        tbodyEmployee.innerHTML = lis.join('');
+       
         
         
         // emps.forEach(emp=>{
