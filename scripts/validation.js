@@ -69,12 +69,12 @@ const checkPassword = pwd => {
     return re.test(pwd);
 }
 
-// export default checkEmpty = data => {
-//     if (data.length === 0) {
-//         return false;
-//     } else {
-//         return true;
-//     }
-// }
-
+const checkEmpty = data => {
+    if (data.length === 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+export default checkEmpty;
 export { checkImageFile, calcAge, checkPersonId, checkPhone, checkMailByRegexp, checkPassword }

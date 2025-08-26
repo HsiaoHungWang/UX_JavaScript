@@ -11,11 +11,11 @@
 
     <!-- <script src="scripts/validation.js"></script> -->
     <script type="module">
-        import { calcAge, checkPersonId, checkMail } from './scripts/validation.js'
+        import checkEmpty, { calcAge, checkPersonId } from './scripts/validation.js'
 
         console.log(calcAge('2000/1/1'));
         console.log(checkPersonId('a223456789'));
-        //console.log(checkEmpty(''));
+        console.log(checkEmpty(''));
     </script>
 </body>
 
