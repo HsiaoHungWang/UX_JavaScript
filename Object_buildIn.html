@@ -82,34 +82,50 @@
 
         //String Object
         //let str =  new String('JavaScript');
-        let str = 'JavaScript';  //str  => 就是字串物件
+        // let str = 'JavaScript';  //str  => 就是字串物件
 
-        console.log(str.indexOf('@')); //找字串的字元，找到後回傳字元的索引值，找不到回傳-1
-        console.log(str.indexOf('a'));  //1
-        console.log(str.lastIndexOf('a')); //3
-        console.log(`lenght:${str.length}`);  //10  index 0-9
+        // console.log(str.indexOf('@')); //找字串的字元，找到後回傳字元的索引值，找不到回傳-1
+        // console.log(str.indexOf('a'));  //1
+        // console.log(str.lastIndexOf('a')); //3
+        // console.log(`lenght:${str.length}`);  //10  index 0-9
 
-        const strMail = 'wang@ispan.com@tw';
+        // const strMail = 'wang@ispan.com@tw';
 
         //RegExp 物件  /pattern/
 
         //a123456789 身分證號
-        const re = /^[a-zA-Z]{1}[1-2]{1}\d{8}$/;
-        console.log(re.test('1234567890'));  //false
-        console.log(re.test('a234567890'));  //true
-        console.log(re.test('a334567890'));  //false
+        // const re = /^[a-zA-Z]{1}[1-2]{1}\d{8}$/;
+        // console.log(re.test('1234567890'));  //false
+        // console.log(re.test('a234567890'));  //true
+        // console.log(re.test('a334567890'));  //false
 
-        console.log(checkPhone('0911222333')); //false
-        console.log(checkPhone('0911-222-333')); //true
-        console.log(checkPhone('0811-222-333')); //false
+        // console.log(checkPhone('0911222333')); //false
+        // console.log(checkPhone('0911-222-333')); //true
+        // console.log(checkPhone('0811-222-333')); //false
 
-        console.log(checkMailByRegexp('wang@ispan.com.tw')); //true
-        console.log(checkMailByRegexp('wang@ispan.com.twtw')); //false
-        console.log(checkMailByRegexp('wangispan.com')); //false
+        // console.log(checkMailByRegexp('wang@ispan.com.tw')); //true
+        // console.log(checkMailByRegexp('wang@ispan.com.twtw')); //false
+        // console.log(checkMailByRegexp('wangispan.com')); //false
 
-        console.log(checkPassword('aA12$'));  //false
-        console.log(checkPassword('aA123$'));  //true
-        console.log(checkPassword('aaa123$'));  //false
+        // console.log(checkPassword('aA12$'));  //false
+        // console.log(checkPassword('aA123$'));  //true
+        // console.log(checkPassword('aaa123$'));  //false
+
+
+        //Array Object
+
+        //陣列的宣告
+        const arr1 = ['b', 'd', 'a', 'c'];
+
+        console.log(`原有陣列中的資料：${arr1}`);
+        console.log(`陣列中有幾筆資料：${arr1.length}`);  //3
+        // //刪除陣列第二個位置的內容
+        // delete arr1[1];
+        // console.log(`刪除後陣列中的資料：${arr1}`);
+        console.log(`陣列轉字串join()用_號串接：${arr1.join('_')}`);
+        console.log(`陣列轉字串用''串接：${arr1.join('')}`);
+        console.log(`陣列反轉reverse()，轉成字串用''串接：${arr1.reverse().join('')}`);
+        console.log(`陣列排序sort()，轉成字串用''串接：${arr1.sort().join('')}`);
 
 
 
