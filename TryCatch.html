@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const f1 = (data) => {
+            try {
+                //主要程式，有可能發生錯誤的程式
+                if (isNaN(data)) {
+                    throw new Error('請輸入數字');
+                }
+                if (data < 0) {
+                    throw new Error('需大於0');
+                }
+                //...
+                //...
+                console.log(data);
+            }
+            catch (error) {
+                //錯誤處理
+                console.log(`有錯誤：${error.message}`);
+            } finally {
+                //一定會執行
+                console.log('end');
+            }
+
+
+        }
+
+        f1("a");
+        // f1(10);
+        // f1(-10);
+    </script>
+</body>
+
+</html>
