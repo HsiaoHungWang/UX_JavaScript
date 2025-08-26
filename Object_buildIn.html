@@ -94,7 +94,10 @@
         btnAdd.addEventListener('click',()=>{
             const emp ={"name":inpName.value,"workYears":inpYear.value,"salary":inpSalary.value};
             console.log(emp);
-            //怎麼加到 emps 陣列中?
+            //怎麼加到 emps 陣列中?           
+            if(!emps){
+              emps = [];
+            }
              emps.push(emp);
 
             //儲存JSON資料
@@ -110,7 +113,9 @@
    const loadDatas = ()=>{
     //從localStorage中讀取JSON資料
      emps = JSON.parse(localStorage.getItem("emps"));
-             const lis = emps.map(emp=>{
+     //null => false
+     if(emps){
+            const lis = emps.map(emp=>{
             const {name,workYears,salary} = emp;
             return(
                 // `<li>${emp.name}</li>`
@@ -124,6 +129,11 @@
             )
         })
         tbodyEmployee.innerHTML = lis.join('');
+     }
+   
+  
+
+        
         }
 
 
