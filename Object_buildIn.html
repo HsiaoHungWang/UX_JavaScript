@@ -116,19 +116,47 @@
 
         //陣列的宣告
         const arr1 = ['b', 'd', 'a', 'c'];
-
+        const arr2 = [5, 32, 17, 8, 63];
         console.log(`原有陣列中的資料：${arr1}`);
         console.log(`陣列中有幾筆資料：${arr1.length}`);  //3
 
-        //splice 刪除(start, delectCount)
-        // arr1.splice(1, 2); //從索引直1的位置開始刪除兩筆資料
+        // for (let item of arr1) {
+        //     console.log(item);
+        // }
 
-        //splice 插入新的項目(start, 0, 'e', 'f');
-        // arr1.splice(1, 0, 'e', 'f');
+        // arr1.forEach((item, idx, arr) => {
+        //     //console.log(arr);
+        //     //console.log(idx); //0 1 2 3
+        //     console.log(item);
+        // })
+        //arr1.forEach(item => console.log(item));
 
-        //splice 修改 (start, deleteCouent, 'e')
-        arr1.splice(2, 1, 'e');
-        console.log(arr1); //[b,e,a,c]
+        //篩選
+        // const datas = arr2.filter(item=>{
+        //     if(item % 2 === 0){
+        //        return item;
+        //     }
+        // })
+        // console.log(datas);
+
+        //加工
+        // const datas = arr2.map(item=>{
+        //     return item * 2;
+        // })
+        const datas = arr2.map(item=>item * 2)
+        console.log(datas);
+
+
+
+        // //splice 刪除(start, delectCount)
+        // // arr1.splice(1, 2); //從索引直1的位置開始刪除兩筆資料
+
+        // //splice 插入新的項目(start, 0, 'e', 'f');
+        // // arr1.splice(1, 0, 'e', 'f');
+
+        // //splice 修改 (start, deleteCouent, 'e')
+        // arr1.splice(2, 1, 'e');
+        // console.log(arr1); //[b,e,a,c]
 
 
 
@@ -141,7 +169,7 @@
         // console.log(`陣列反轉reverse()，轉成字串用''串接：${arr1.reverse().join('')}`);
         // console.log(`陣列排序sort()，轉成字串用''串接：${arr1.sort().join('')}`);
 
-        // const arr2 = [5, 32, 17, 8, 63];
+        
         // console.log(`數字陣列排序 sort()：${arr2.sort()}`) //[5,8,17,32,63]不對 [17,32,5,63,8]
         // console.log(`數字陣列排序 sort((a,b)=>a-b)：${arr2.sort((a, b) => a - b)}`); //[5,8,17,32,63]
         // //a-b 為負 3-5 =>35 a在前面b在後面
