@@ -20,12 +20,14 @@
 <body>
     <input type="text" id="inputText" />
     <button>送出</button>
+    <input type="text" id="inputText2" />
     <div id="div1"></div>
 
     <script>
         const inpText = document.querySelector('#inputText');
+        const inpText2 = document.querySelector('#inputText2');
         const myDiv = document.querySelector('#div1');
-
+        inpText2.focus();
         //事件物件=>事件處理函式，函式中的第一個參數就是事件物件
         inpText.addEventListener('keydown', event => {
             //event 就是事件物件
@@ -35,23 +37,32 @@
             // key:Tab, which：9
             // key:ArrowUp, which：38
             // key:ArrowLeft, which：37
-            //  key:ArrowRight, which：39
-            //  key:ArrowDown, which：40
-            //  key:Control, which：17
+            // key:ArrowRight, which：39
+            // key:ArrowDown, which：40
+            // key:Control, which：17
             // key:Alt, which：18
             // key:Shift, which：16
-            //key:Delete, which：46
+            // key:Delete, which：46
 
             // if (event.which === 13) {
             if (event.key === 'Enter') {
                 console.log(inpText.value);
             } else if (event.key === 'Delete') {
                 inpText.value = '';
+            } else if (event.which === 9) {
+                console.log('tab');
+                inpText2.focus();
             }
         });
 
         myDiv.addEventListener('mousedown', event => {
-            console.log(event);
+            console.log(`offsetX：${event.offsetX}, offsetY:${event.offsetY}`);
+            console.log(`clientX：${event.clientX}, clientY:${event.clientY}`);
+            console.log(`screenX：${event.screenX}, screenY:${event.screenY}`);
+        })
+
+        document.addEventListener('keydown', event => {
+            myDiv.style.top = '10px';
         })
     </script>
 </body>
