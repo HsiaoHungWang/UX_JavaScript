@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .s1 {
+            color: green;
+            text-decoration: underline;
+        }
+
+        .s2 {
+            color: red;
+            text-decoration: none;
+
+        }
+
+        .s3 {
+            background-color: cadetblue;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="s1 s3">JavaScript Style Change</h1>
+
+    <script>
+        const myH = document.querySelector('h1');
+        myH.addEventListener('mouseover', () => {
+            // myH.classList.remove('s1');
+            // myH.classList.add('s2');
+            //myH.classList.toggle('s1'); //s1 切換，如果有s1就移除，沒有s1就加入
+            console.log(myH.classList.contains('s2')); //如果有s2回傳true，沒有回傳false
+        })
+    </script>
+</body>
+
+</html>
