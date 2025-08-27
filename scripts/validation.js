@@ -69,12 +69,13 @@ const checkPassword = pwd => {
     return re.test(pwd);
 }
 
-const checkEmpty = data => {
-    if (data.length === 0) {
-        return false;
-    } else {
-        return true;
+const checkEmpty = item => {
+    const data = item.trim();
+    let isValid = true;
+    if (data === '' || data.length === 0) {
+        isValid = false;
     }
+    return isValid
 }
 export default checkEmpty;
 export { checkImageFile, calcAge, checkPersonId, checkPhone, checkMailByRegexp, checkPassword }
