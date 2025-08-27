@@ -62,7 +62,24 @@
         })
 
         document.addEventListener('keydown', event => {
-            myDiv.style.top = '10px';
+            // console.log(myDiv.offsetLeft)
+            // console.log(myDiv.offsetX)
+
+            switch (event.which) {
+                case 37: //左
+                    myDiv.style.left = `${myDiv.offsetLeft - 10}px`;
+                    break;
+                case 38: //上
+                    myDiv.style.top = `${myDiv.offsetTop - 10}px`;
+                    break;
+                case 39: //右
+                    myDiv.style.left = `${myDiv.offsetLeft + 10}px`;
+                    break;
+                case 40: //下
+                    myDiv.style.top = `${myDiv.offsetTop + 10}px`;
+                    break;
+            }
+
         })
     </script>
 </body>
