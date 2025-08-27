@@ -49,11 +49,33 @@
 
             const errors = []; //蒐集所有的錯誤訊息
 
+
+            //檢查是否有輸入資料
+            if (!checkEmpty(inpName.value)) {
+                //有問題
+                inpName.classList.add('error');
+                errors.push('姓名要輸入')
+            }
+            if (!checkEmpty(inpMail.value)) {
+                //有問題
+                inpMail.classList.add('error');
+                errors.push('電子郵件要輸入')
+            }
+            if (!checkEmpty(inpPhone.value)) {
+                //有問題
+                inpPhone.classList.add('error');
+                errors.push('電話要輸入')
+            }
+
+
+
             //要驗證沒問題後才送出
             if (errors.length === 0) {
                 regForm.submit();
             } else {
                 //顯示錯誤訊息
+                const errs = errors.map(message => `<li>${message}</li>`);
+                errorList.innerHTML = errs.join('');
 
             }
 
