@@ -15,14 +15,38 @@
         <li id="liNode">bbbbb</li>
         <li>ccccc</li>
     </ul>
+    <div id="div1">
+
+    </div>
 
     <script>
-        const theLi = document.querySelector('#liNode');
-        console.log(theLi.firstChild.nodeValue); //bbbbb
-        //aaaaa
-        console.log(theLi.previousSibling.previousSibling.firstChild.nodeValue);
-        //ccccc
-        console.log(theLi.         .nodeValue);
+
+        const theDiv = document.querySelector('#div1');
+        theDiv.innerHTML = '<h2>xyz</h2><img src="images/dog1.jpg" />';
+
+        //DOM 屬性處理
+        const myImg = document.createElement('img'); //<img />
+        myImg.setAttribute('src', 'images/dog2.jpg'); //<img src='images/dog2.jpg' />
+        theDiv.appendChild(myImg);
+
+
+        //DOM 新增
+        // const txtNode = document.createTextNode('abcdefg');
+        // const eleNode = document.createElement('h2')
+        // eleNode.appendChild(txtNode);  //<h2>abcdefg</h2>
+
+        // theDiv.appendChild(eleNode);
+
+
+
+        // const theLi = document.querySelector('#liNode');
+        // console.log(theLi.firstChild.nodeValue); //bbbbb
+        // //aaaaa
+        // console.log(theLi.previousSibling.previousSibling.firstChild.nodeValue);
+        // console.log(theLi.parentNode.childNodes[1].firstChild.nodeValue);
+        // //ccccc
+        // console.log(theLi.nextSibling.nextSibling.firstChild.nodeValue);
+        // console.log(theLi.parentNode.childNodes[5].firstChild.nodeValue);
 
 
         // const myH = document.querySelector('h1');
