@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 400px;
+            height: 300px;
+            background-color: cyan;
+        }
+
+        #div2 {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+        }
+
+
+        #p1 {
+            margin: 10px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">div1
+        <div id="div2">div2
+            <p id="p1">PPPPPPPPPPPPP</p>
+        </div>
+    </div>
+
+    <script>
+        //addEventListener('事件類型','事件處理程序','事件傳播行為預設是Event Bubbling')
+        //事件傳播行為如果為 true 就會改成 Event Capturing
+        document.querySelector('#div1').addEventListener('click', event => {
+            event.stopPropagation(); //停止事件傳播行為
+            console.log(`target：${event.target.id}, cureentTarget：${event.currentTarget.id}`);
+        }, false)
+        document.querySelector('#div2').addEventListener('click', event => {
+            event.stopPropagation(); //停止事件傳播行為
+            console.log(`target：${event.target.id}, cureentTarget：${event.currentTarget.id}`);
+
+        }, false)
+        document.querySelector('#p1').addEventListener('click', event => {
+            //觸發事件的對象 target
+            //現在正在發生事件的對象 currentTarget
+            event.stopPropagation(); //停止事件傳播行為
+            console.log(`target：${event.target.id}, cureentTarget：${event.currentTarget.id}`);
+        }, false)
+    </script>
+</body>
+
+</html>
