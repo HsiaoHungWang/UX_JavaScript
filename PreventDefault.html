@@ -26,7 +26,10 @@
             }
         })
         ispanLink.addEventListener('click', event => {
-            event.preventDefault();  //停止連結的行為
+            if (!window.confirm('真的要離開嗎?')) {
+                event.preventDefault();  //停止連結的行為
+            }
+
         })
 
         //按下滑鼠右鍵會有contextmenu事件
