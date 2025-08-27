@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/do" id="form1">
+        <input type="text" name="userName" />
+        <input type="text" name="userAge" /><button id="buttonSubmit">送出</button>
+    </form>
+
+    <a href="https://www.ispan.com.tw" id="link1">iSpan</a>
+
+    <script>
+        const btnSubmit = document.querySelector('#buttonSubmit');
+        const ispanLink = document.querySelector('#link1');
+        btnSubmit.addEventListener('click', event => {
+            //todo 驗證程式
+            if (true) {
+                alert('請輸入姓名');
+                event.preventDefault();
+            }
+        })
+        ispanLink.addEventListener('click', event => {
+            event.preventDefault();
+
+        })
+    </script>
+</body>
+
+</html>

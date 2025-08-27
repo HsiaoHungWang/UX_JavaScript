@@ -27,7 +27,7 @@
         const inpText = document.querySelector('#inputText');
         const inpText2 = document.querySelector('#inputText2');
         const myDiv = document.querySelector('#div1');
-        inpText2.focus();
+
         //事件物件=>事件處理函式，函式中的第一個參數就是事件物件
         inpText.addEventListener('keydown', event => {
             //event 就是事件物件
@@ -50,8 +50,8 @@
             } else if (event.key === 'Delete') {
                 inpText.value = '';
             } else if (event.which === 9) {
-                console.log('tab');
-                inpText2.focus();
+                console.log('Tab');
+                document.querySelector('#inputText2').focus();
             }
         });
 
@@ -62,8 +62,9 @@
         })
 
         document.addEventListener('keydown', event => {
+
             // console.log(myDiv.offsetLeft)
-            // console.log(myDiv.offsetX)
+            // console.log(event.offsetX)
 
             switch (event.which) {
                 case 37: //左
