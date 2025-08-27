@@ -8,12 +8,33 @@
 </head>
 
 <body>
-
+    <button id="buttonClick">Start</button>
+    <h2 id="h2Clock">00:00:00</h2>
     <script>
-        console.log(window);
-        console.log(history);
-        console.log(location);
-        console.log(navigator);
+        const btnClick = document.querySelector('#buttonClick');
+        const clock = document.querySelector('#h2Clock');
+        let t;
+        const startClock = () => {
+            const today = new Date();
+            clock.textContent = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+        }
+
+        btnClick.addEventListener('click', () => {
+            if (btnClick.textContent === 'Start') {
+                btnClick.textContent = 'Stop';
+                //每隔一秒執行 startClock 的 function
+                t = window.setInterval(startClock, 1000);
+            } else {
+                btnClick.textContent = 'Start';
+                //停止計時
+                window.clearInterval(t);
+            }
+        })
+
+        // console.log(window);
+        // console.log(history);
+        // console.log(location);
+        // console.log(navigator);
     </script>
 </body>
 
