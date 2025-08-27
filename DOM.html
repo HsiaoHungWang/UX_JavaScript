@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Document Object Model</h1>
+
+    <ul>
+        <li>aaaaa</li>
+        <li id="liNode">bbbbb</li>
+        <li>ccccc</li>
+    </ul>
+
+    <script>
+        const theLi = document.querySelector('#liNode');
+        console.log(theLi.firstChild.nodeValue); //bbbbb
+        //aaaaa
+        console.log(theLi.previousSibling.previousSibling.firstChild.nodeValue);
+        //ccccc
+        console.log(theLi.         .nodeValue);
+
+
+        // const myH = document.querySelector('h1');
+        // console.log(`nodeType：${myH.nodeType}`);  //節點類型 1表示元素節點
+        // console.log(`nodeName：${myH.nodeName}`);  //元素節點的名稱 H1
+        // console.log(`nodeValue：${myH.nodeValue}`);  //文字節點的內容 null
+        // console.log(`nodeType：${myH.firstChild.nodeType}`);  //節點類型 3表示文字節點
+        // console.log(`nodeName：${myH.firstChild.nodeName}`);  //元素節點的名稱 #text
+        // console.log(`nodeValue：${myH.firstChild.nodeValue}`);  //文字節點的內容 Document Object Model
+
+        // console.log(myH.textContent) //Document Object Model
+
+
+    </script>
+</body>
+
+</html>
