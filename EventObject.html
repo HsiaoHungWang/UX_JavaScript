@@ -19,6 +19,7 @@
 
 <body>
     <input type="text" id="inputText" />
+    <button>送出</button>
     <div id="div1"></div>
 
     <script>
@@ -28,7 +29,25 @@
         //事件物件=>事件處理函式，函式中的第一個參數就是事件物件
         inpText.addEventListener('keydown', event => {
             //event 就是事件物件
-            console.log(event);
+            console.log(`key:${event.key}, which：${event.which}`);
+            // key:Enter, which：13
+            // key:Process, which：229
+            // key:Tab, which：9
+            // key:ArrowUp, which：38
+            // key:ArrowLeft, which：37
+            //  key:ArrowRight, which：39
+            //  key:ArrowDown, which：40
+            //  key:Control, which：17
+            // key:Alt, which：18
+            // key:Shift, which：16
+            //key:Delete, which：46
+
+            // if (event.which === 13) {
+            if (event.key === 'Enter') {
+                console.log(inpText.value);
+            } else if (event.key === 'Delete') {
+                inpText.value = '';
+            }
         });
 
         myDiv.addEventListener('mousedown', event => {
