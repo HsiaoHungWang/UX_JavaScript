@@ -22,12 +22,17 @@
             //todo 驗證程式
             if (true) {
                 alert('請輸入姓名');
-                event.preventDefault();
+                event.preventDefault(); //停止Submit的行為
             }
         })
         ispanLink.addEventListener('click', event => {
-            event.preventDefault();
+            event.preventDefault();  //停止連結的行為
+        })
 
+        //按下滑鼠右鍵會有contextmenu事件
+        document.addEventListener('contextmenu', event => {
+            console.log('contextmenu');
+            event.preventDefault(); //停止顯示功能選單行為
         })
     </script>
 </body>

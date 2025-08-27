@@ -50,8 +50,9 @@
             } else if (event.key === 'Delete') {
                 inpText.value = '';
             } else if (event.which === 9) {
-                console.log('Tab');
-                document.querySelector('#inputText2').focus();
+                event.preventDefault();
+                //console.log('Tab');
+                inpText2.focus();
             }
         });
 
