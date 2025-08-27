@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .error {
+            background-color: pink;
+            border: 2px dashed red;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,12 +22,44 @@
             <label>電子郵件：<input type="email" name="userMail" rquired /></label>
         </div>
         <div>
-            <label>電話：<input type="tel" name="userMail" rquired placeholder="0911-222-333" /></label>
+            <label>電話：<input type="tel" name="userPhone" rquired placeholder="0911-222-333" /></label>
         </div>
         <div>
             <button>送出</button>
         </div>
     </form>
+    <ul id="ulErrors">
+
+    </ul>
+    <!-- 
+    <script src="scripts/validation.js"></script> -->
+
+    <script type="module">
+        import checkEmpty, { checkPhone, checkMailByRegexp } from './scripts/validation.js';
+
+        const regForm = document.querySelector('form');
+        const inpName = document.querySelector('input[name="userName"]');
+        const inpMail = document.querySelector('input[name="userMail"]');
+        const inpPhone = document.querySelector('input[name="userPhone"]');
+        const errorList = document.querySelector('#ulErrors');
+
+        regForm.addEventListener('submit', event => {
+            //停止submit的行為發生
+            event.preventDefault();
+
+            const errors = []; //蒐集所有的錯誤訊息
+
+            //要驗證沒問題後才送出
+            if (errors.length === 0) {
+                regForm.submit();
+            } else {
+                //顯示錯誤訊息
+
+            }
+
+        })
+
+    </script>
 </body>
 
 </html>
