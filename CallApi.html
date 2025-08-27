@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.7/css/bootstrap.min.css"
+        integrity="sha512-fw7f+TcMjTb7bpbLJZlP8g2Y4XcCyFZW8uy8HsRZsH/SwbMw0plKHFHr99DN3l04VsYNwvzicUX/6qurvIxbxw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+
+        </div>
+    </div>
+
+    <script>
+        const loadDogImages = async () => {
+            const url = 'https://api.thecatapi.com/v1/images/search?page=1&limit=10'
+
+            //串接 API
+            const response = await fetch(url);
+            const datas = await response.json();
+
+            console.log(datas); //就是回傳的JSON資料
+
+            //讀出JSON資料、顯示JSON資料
+            const dogs = datas.map(dog => {
+                return (
+                    `
+                    <div class="col">
+                        <div class="card">
+                        <img src="${dog.url}" class="card-img-top" alt="${dog.id}">
+                        
+                        </div>
+                    </div>
+                    
+                    `
+                )
+            })
+
+            document.querySelector('.row').innerHTML = dogs.join('');
+
+
+        }
+
+        loadDogImages();
+
+    </script>
+</body>
+
+</html>
